@@ -16,5 +16,5 @@ This assumes you already have PHP installed on your machine.
 ## Authors
 
 * **Carla Mendes** - *Graphic Design*
-* **Simão Nogueira** - *Web Design and Dev* - [simaonogueira101](https://github.com/simaonogueira101)
 * **Rúben Silva** - *Graphic and Web Design* - [rubenjsilva] (https://github.com/rubenjsilva)
+* **Simão Nogueira** - *Web Design and Dev* - [simaonogueira101](https://github.com/simaonogueira101)
