@@ -1,0 +1,92 @@
+.wrapper-80 {
+  width: 80%;
+  margin: 0 auto;
+  height: 100vh;
+}
+
+.w-50 {
+  @include phablet() {
+      width: 50%;
+    }
+    width: 80%;
+}
+
+.wrapper-grad {
+  background-color: $orange;
+	background: linear-gradient(to bottom, $lightgrey 23%, $orange 100%);
+	width: 100%;
+	height: 100vh;
+}
+
+.wrapper-home {
+  width: 80%;
+  margin: 0 auto;
+  height: 100%;
+}
+
+.flex-center {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-sa {
+  display: flex;
+  justify-content: space-around;
+}
+
+.flex-sb {
+  display: flex;
+  justify-content: space-between;
+}
+
+.flex-sb-vam {
+  justify-content: space-between;
+  align-items: center;
+  display: flex;
+}
+
+.flex-vam {
+  align-items: center;
+  display: flex;
+}
+
+.flex-end {
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.flex-j-end {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.flex-start {
+  display: flex;
+  align-items: flex-start;
+}
+
+.flex-col-sb {
+  flex-direction: column;
+  justify-content: space-between;
+  display: flex;
+}
+
+.flex-sb-wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.flex-col-center {
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-wrap-center {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
