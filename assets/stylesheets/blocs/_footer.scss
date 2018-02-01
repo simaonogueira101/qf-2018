@@ -14,3 +14,8 @@ footer a {
   margin-right: 12px;
   margin-left: 12px;
 }
+@media only screen and (max-width: 500px) {
+  footer {
+    padding: 32px;
+  }
+}
