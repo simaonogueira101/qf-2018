@@ -2,14 +2,15 @@ footer {
   position: absolute;
   bottom: 0;
   left: 0;
-  font-family: 'VCR', monospace;
   width: 100%;
   padding: 24px;
   display: flex;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
+  font-family: "VCR";
 }
-footer .footer-links a {
-  margin-left: 12px;
+footer a {
   margin-right: 12px;
+  margin-left: 12px;
 }
