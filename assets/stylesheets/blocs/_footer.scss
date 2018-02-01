@@ -1,8 +1,15 @@
 footer {
-  @include phablet() {
-    margin-left: 25%;
-  }
-  margin-left: 10%;
   position: absolute;
-  bottom: 1em;
+  bottom: 0;
+  left: 0;
+  font-family: 'VCR', monospace;
+  width: 100%;
+  padding: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+footer .footer-links a {
+  margin-left: 12px;
+  margin-right: 12px;
 }
