@@ -6,8 +6,9 @@ Website for Queima das Fitas Coimbra 2018
 This assumes you already have PHP installed on your machine.
 
 1. Clone the repo.
-1. Run `php -S localhost:9000`.
-1. Open your browser on `http://localhost:9000`.
+2. Run `php -S localhost:9000`.
+3. Run `sass --watch . --style compressed --no-cache --sourcemap=none` on another terminal tab.
+4. Open your browser on `http://localhost:9000`.
 
 ## Built With
 
