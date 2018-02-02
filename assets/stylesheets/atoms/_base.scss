@@ -11,18 +11,18 @@ html {
 }
 
 body {
-	background-color: $dark;
+  background: black;
   color: $white;
 	width: 100%;
-  height: 100%;
   font-size: 1.5rem;
   font-style: normal;
   line-height: 2.8rem;
   text-rendering: optimizeLegibility;
+  position: relative;
+  font-family: 'VCR', sans-serif;
 }
 
 h1 {
-  font-family: 'VCR', monospace;
   font-size: 3.2rem;
   line-height: 130%;
   font-weight: 100;
@@ -56,6 +56,23 @@ a {
   &:hover {
     text-decoration: underline;
   }
+
+  z-index: 1;
+}
+/*This is a fix for VCR font links with underline on hover.*/
+a:before {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 0;
+  bottom: 0;
+  left: 0;
+  transform: scaleX(0);
+  transition: .25s linear;
+}
+a:hover:before {
+  visibility: visible;
+  transform: scaleX(1);
 }
 
 p {
@@ -70,11 +87,6 @@ b {
 
 strong {
   font-weight: 900;
-}
-
-img {
-  padding-right: .5rem;
-  width: 2rem;
 }
 
 i {
@@ -116,4 +128,228 @@ hr {
 
 .loading span:nth-child(3) {
     animation-delay: .4s;
+}
+
+main {
+	height: 100%;
+	width: 100%;
+}
+
+section {
+	min-height: 100vh;
+	width: 100%;
+}
+
+.hero {
+	width: 100%;
+	height: 100vh;
+	background-image: url("../resources/home-back.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+}
+
+#box {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	left: 0;
+  overflow: hidden;
+}
+
+.layer {
+	position: absolute;
+  display: flex !important;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  user-select: none;
+}
+.layer div {
+  position: absolute;
+}
+
+#l1 ._1 {
+  left: -8vw;
+  top: -15vh;
+}
+#l1 ._1 img {
+  width: 75vw;
+}
+#l1 ._2 {
+  bottom: -28vh;
+  left: -10vw;
+}
+#l1 ._2 img {
+  width: 40vw;
+}
+#l1 ._3 {
+  bottom: -15vh;
+  right: -10vw;
+}
+#l1 ._3 img {
+  width: 40vw;
+}
+@media only screen and (max-width: 870px) {
+  #l1 ._3 img {
+    width: 60vw;
+  }
+  #l1 ._2 img {
+    width: 60vw;
+  }
+  #l1 ._1 img {
+    width: 90vw;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #l1 ._3 {
+    bottom: -5vh;
+    right: -10vw;
+  }
+  #l1 ._2 {
+    bottom: -10vh;
+    left: -20vw;
+  }
+  #l1 ._1 {
+    left: -8vw;
+    top: -5vh;
+  }
+}
+
+#l2 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#l2 ._1 .c-hero-title {
+  width: 70vw;
+  max-width: 300px;
+  margin-left: -12px;
+  margin-top: 6px;
+  position: relative;
+}
+#l2 ._1 .c-hero-title img {
+  width: 100%;
+  height: 100%;
+}
+#l2 ._1 .c-hero-title .flasher {
+  opacity: 0;
+  position: absolute;
+  bottom: 90px;
+  right: 68px;
+  height: 40px;
+  width: 30px;
+  background: #EC045B;
+  animation: flash 1s steps(1) infinite;
+}
+@keyframes flash {
+  50% {
+    opacity: 1;
+  }
+}
+
+#l3 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#l3 ._1 img {
+  width: 75vw;
+  max-width: 340px;
+  margin-top: -12px;
+  margin-left: 12px;
+}
+
+#l4 {
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#l4 ._1 img {
+  max-width: 250px;
+  transform: translate(55px, -150px);
+}
+
+@media only screen and (max-width: 455px) {
+  #l4 ._1 img {
+    width: 50vw;
+    transform: translate(14vw, -34vw);
+  }
+  #l2 ._1 .c-hero-title .flasher {
+    bottom: 20.8vw;
+    right: 15vw;
+    height: 10vw;
+    width: 7.5vw;
+  }
+}
+
+.download {
+  width: 32px;
+}
+
+.download-container {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.download-container .link-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  width: 80%;
+  max-width: 550px;
+  padding: 32px;
+  background: #FFF7C7;
+  border-color: #EC045B;
+  border-width: 2px;
+  border-style: solid;
+  position: relative;
+}
+.download-container .link-container a {
+  color: #EC045B;
+  margin-bottom: 6px;
+  margin-top: 6px;
+}
+.download-container .download-top {
+  position: absolute;
+  right: 32px;
+  top: -22px;
+}
+.download-container .download-top img {
+  height: 51px;
+}
+.download-container .download-top-heart img {
+  position: absolute;
+  top: -22px;
+  width: 52px;
+  right: -22px;
+}
+@media only screen and (max-width: 500px) {
+  .desktop {
+    display: none;
+  }
+}
+@media only screen and (min-width: 500px) {
+  .mobile {
+    display: none;
+  }
 }
