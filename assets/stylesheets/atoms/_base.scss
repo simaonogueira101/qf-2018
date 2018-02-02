@@ -176,13 +176,13 @@ section {
 }
 #l1 ._1 {
   left: -8vw;
-  top: -12vh;
+  top: -15vh;
 }
 #l1 ._1 img {
   width: 75vw;
 }
 #l1 ._2 {
-  bottom: -25vh;
+  bottom: -28vh;
   left: -10vw;
 }
 #l1 ._2 img {
@@ -194,6 +194,31 @@ section {
 }
 #l1 ._3 img {
   width: 40vw;
+}
+@media only screen and (max-width: 870px) {
+  #l1 ._3 img {
+    width: 60vw;
+  }
+  #l1 ._2 img {
+    width: 60vw;
+  }
+  #l1 ._1 img {
+    width: 90vw;
+  }
+}
+@media only screen and (max-width: 800px) {
+  #l1 ._3 {
+    bottom: -5vh;
+    right: -10vw;
+  }
+  #l1 ._2 {
+    bottom: -10vh;
+    left: -20vw;
+  }
+  #l1 ._1 {
+    left: -8vw;
+    top: -5vh;
+  }
 }
 
 #l2 {
