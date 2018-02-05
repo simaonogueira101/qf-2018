@@ -168,6 +168,9 @@ section {
   user-select: none;
 }
 .layer div {
+  position: relative;
+}
+.layer#l1 div {
   position: absolute;
 }
 
