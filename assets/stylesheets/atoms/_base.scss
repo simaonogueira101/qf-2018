@@ -314,6 +314,20 @@ section {
   justify-content: center;
   align-items: center;
 }
+.download-container .link-container.fixed {
+  max-height: 500px;
+  overflow-y: scroll;
+}
+@media only screen and (max-width: 380px) {
+  .download-container .link-container.fixed {
+    max-height: 400px;
+  }
+}
+@media only screen and (max-width: 350px) {
+  .download-container .link-container.fixed {
+    max-height: 350px;
+  }
+}
 .download-container .link-container {
   display: flex;
   flex-direction: column;
@@ -327,15 +341,25 @@ section {
   border-style: solid;
   position: relative;
 }
-.download-container .link-container a {
+.download-container .link-container a, .download-container .link-container h3 {
   color: #EC045B;
   margin-bottom: 6px;
   margin-top: 6px;
+}
+.download-container .link-container.fixed a {
+  word-wrap: break-word;
+}
+.download-container .link-container p {
+  color: #9e9562;
+  line-height: 140%;
 }
 .download-container .download-top {
   position: absolute;
   right: 32px;
   top: -22px;
+}
+.download-container .link-container.fixed .download-top {
+  position: relative;
 }
 .download-container .download-top img {
   height: 51px;
@@ -346,6 +370,12 @@ section {
   width: 52px;
   right: -22px;
 }
+.download-container .link-container.fixed .download-top-heart img {
+  position: absolute;
+  top: 10px;
+  width: 52px;
+  right: 10px;
+}
 @media only screen and (max-width: 500px) {
   .desktop {
     display: none;
@@ -355,4 +385,9 @@ section {
   .mobile {
     display: none;
   }
+}
+
+.break {
+  margin-top: 12px;
+  margin-bottom: 12px;
 }
