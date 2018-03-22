@@ -67,6 +67,7 @@ i {
   width: 25vw;
   height: 6vw;
   background: $main;
+  z-index: 3;
 
   div {
     background: $main;
@@ -192,6 +193,28 @@ i {
 .logo-home {
   transform: scale(1.3);
   transform-origin: top left;
+
+  @media screen and (max-width: 805px) {
+    display: none;
+  }
+}
+
+.logo-square {
+  width: 60%;
+  display: block;
+  margin: 0 auto;
+  padding-top: 96px;
+
+  .cls-1, .cls-3 {
+    fill: $main;
+  }
+  .cls-2 {
+    fill: $other;
+  }
+
+  @media screen and (min-width: 805px) {
+    display: none;
+  }
 }
 
 .nav-button {
@@ -222,6 +245,15 @@ i {
       transform: rotate(-45deg);
     }
   }
+
+  @media screen and (max-width: 805px) {
+    left: calc(50% - 10px);
+    top: calc(100vh / 44);
+  }
+
+  &.active {
+    position: fixed;
+  }
 }
 
 .navbar {
@@ -230,8 +262,7 @@ i {
   height: 100vh;
   z-index: 5;
   right: -100vw;
-  top: 0;
-  transition: right 0.5s;
+  transition: right 0.5s, bottom 0.5s;
 
   div {
     a {
@@ -267,17 +298,52 @@ i {
       border: solid 2px $other;
 
       &:hover {
-        background-image: url("../resources/transp-grid.svg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        background-color: $main;
+        background-image: linear-gradient(45deg, $other 25%, transparent 25%, transparent 75%, $other 75%, $other), linear-gradient(45deg, $other 25%, transparent 25%, transparent 75%, $other 75%, $other);
+        background-size: 30px 30px;
+        background-position:0 0, 15px 15px;
 
         a {
           background: $main;
           border: solid 4px $other;
         }
+
+        &:nth-child(3) {
+          background: $main;
+        }
+      }
+
+      @media screen and (max-width: 805px) {
+        &:last-child {
+          border-bottom: solid 6px $other;
+        }
       }
     }
+
+    @media screen and (max-width: 805px) {
+      flex-direction: column;
+      flex-wrap: nowrap;
+
+      div {
+        height: calc(100% / 9);
+        width: 100% !important;
+      }
+
+      div:nth-child(3) {
+        display: none;
+      }
+    }
+  }
+  @media screen and (max-width: 805px) {
+    right: 0;
+    bottom: -100vh;
+
+    &.active {
+      bottom: -11.5%;
+    }
+  }
+  @media screen and (min-width: 805px) {
+    top: 0;
   }
 }
 
@@ -293,6 +359,11 @@ i {
   #timer {
     font-size: 8rem;
     padding-bottom: 24px;
+    text-align: center;
+
+    @media screen and (max-width: 370px) {
+      font-size: 5rem;
+    }
   }
 }
 
@@ -306,6 +377,7 @@ i {
     height: 100%;
     background: $other;
     width: 0;
+    transition: width 2s;
   }
 }
 
@@ -323,6 +395,10 @@ main {
   max-width: 850px;
   justify-content: center;
   margin: 0 auto;
+
+  @media screen and (max-width: 805px) {
+    padding-top: 96px;
+  }
 }
 
 .doc {
@@ -353,8 +429,38 @@ main {
   justify-content: center;
   margin: 0 auto;
 
+  @media screen and (max-width: 805px) {
+    grid-template-columns: repeat(auto-fill, 80%);
+  }
+
+  @media screen and (max-width: 805px) {
+    padding-top: 96px;
+  }
+
+  &.news {
+    grid-template-columns: repeat(auto-fill, 500px);
+    max-width: 1100px;
+    grid-row-gap: 80px;
+
+    @media screen and (max-width: 805px) {
+      grid-template-columns: repeat(auto-fill, 80%);
+    }
+
+    &.read {
+      grid-template-columns: 100%;
+      max-width: 1000px;
+      padding-bottom: 280px;
+
+      @media screen and (max-width: 1085px) {
+        left: 0;
+        padding-bottom: 400px;
+      }
+    }
+  }
+
   .contact {
     position: relative;
+    left: -6px;
     .square {
       position: absolute;
       left: 85%;
@@ -367,10 +473,36 @@ main {
       justify-content: center;
       align-items: center;
       box-shadow: -0.9vw 0.9vw 1.5vw -0.75vw $other;
+
+      &.read {
+        background: $main;
+        border: solid 4px $other;
+      }
       .inner-square {
         border: solid 4px $main;
         width: 50%;
         height: 50%;
+      }
+      &.news {
+        left: calc(95% - 22px);
+        svg {
+          width: 50%;
+          fill: $main;
+        }
+        &.read {
+          @media screen and (max-width: 1085px) {
+            left: calc(80vw + 12px);
+            top: -24px;
+          }
+          right: 0;
+          top: 0px;
+          svg {
+            width: 55%;
+            margin-left: 4px;
+            margin-top: 4px;
+            fill: $other;
+          }
+        }
       }
     }
     .contact-top, .contact-bottom {
@@ -386,6 +518,34 @@ main {
       z-index: 1;
       width: 80%;
       box-shadow: -0.9vw 0.9vw 1.5vw -0.75vw $other;
+
+      &.news {
+        position: absolute;
+        background-image: url("../../assets/resources/test.jpg");
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 150px;
+
+        @media screen and (max-width: 805px) {
+          width: 100px;
+          height: 100px;
+        }
+
+        &.read {
+          width: 300px;
+          height: 300px;
+
+          @media screen and (max-width: 1085px) {
+            position: static;
+            margin: 0 auto;
+            width: 80%;
+            max-width: 700px;
+            height: 60vw;
+          }
+        }
+      }
     }
     .contact-bottom {
       width: 95%;
@@ -395,13 +555,75 @@ main {
       padding: 12px;
       flex-direction: column;
       z-index: 0;
+
+      &.news {
+        top: 24px;
+        width: 80%;
+        left: 15%;
+        padding-left: 86px;
+
+        @media screen and (max-width: 805px) {
+          .name {
+            padding-left: 56px;
+          }
+          &.read {
+            .name {
+              padding-left: 0px;
+              line-height: 110%;
+            }
+          }
+          padding-left: 12px;
+        }
+
+        &.read {
+          max-width: 700px;
+          padding-left: 80px;
+          padding-right: 24px;
+          padding-bottom: 42px;
+
+          @media screen and (min-width: 1085px) {
+            left: calc(15% + 100px);
+          }
+          @media screen and (max-width: 1085px) {
+            padding-left: 24px;
+            margin: 0 auto;
+            left: 0;
+          }
+        }
+      }
       .name {
         font-size: 1.2rem;
         font-family: 'AnoBlack', sans-serif;
+
+        &.news {
+          font-size: 2rem;
+
+          &.read {
+            font-size: 2.5rem;
+            padding-top: 24px;
+          }
+        }
       }
       .description {
         font-size: 1.2rem;
         line-height: 120%;
+
+        &.news {
+          font-size: 1.5rem;
+          font-family: 'AnoBlackRegular', sans-serif;
+
+          &.read {
+            font-size: 1.8rem;
+          }
+        }
+      }
+      .date.news {
+        font-size: 1rem;
+
+        &.read {
+          font-size: 1.5rem;
+          padding-bottom: 24px;
+        }
       }
     }
     .contact-title {
@@ -425,6 +647,10 @@ main {
   margin: 0 auto;
   padding-left: 24px;
   padding-right: 24px;
+
+  @media screen and (max-width: 805px) {
+    padding-top: 96px;
+  }
 
   .partner-c-container {
     border: solid 4px $other;
@@ -464,6 +690,11 @@ main {
       img {
         width: 90%;
       }
+      // Temporary!
+      background-color: $main;
+      background-image: linear-gradient(45deg, $other 25%, transparent 25%, transparent 75%, $other 75%, $other), linear-gradient(45deg, $other 25%, transparent 25%, transparent 75%, $other 75%, $other);
+      background-size: 30px 30px;
+      background-position:0 0, 15px 15px;
     }
   }
 }
@@ -473,6 +704,10 @@ main {
   padding-bottom: 96px;
   padding-left: 24px;
   padding-right: 24px;
+
+  @media screen and (max-width: 805px) {
+    padding-top: 96px;
+  }
 
   .history-container-c {
     max-width: 650px;
@@ -520,4 +755,160 @@ main {
     width: 80%;
     box-shadow: -0.9vw 0.9vw 1.5vw -0.75vw $other;
   }
+}
+
+.soon-tickets {
+  font-family: 'AnoBlack', sans-serif;
+  font-size: 3rem !important;
+}
+
+.soon-container {
+  padding-top: 280px;
+  padding-bottom: 96px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  @media screen and (max-width: 805px) {
+    padding-top: 96px;
+  }
+
+  img {
+    width: 100%;
+    max-width: 650px;
+    display: block;
+    margin: 0 auto;
+    border: solid 4px $other;
+    border-bottom: 0;
+  }
+
+  .soon-container-c {
+    max-width: 650px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    border: solid 4px $other;
+    padding-top: 48px;
+    padding-bottom: 32px;
+    font-size: 2.2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    svg {
+      margin-top: 24px;
+      margin-bottom: 32px;
+      width: 100px;
+      .cls-1 {
+        stroke: $other;
+      }
+      .cls-2 {
+        fill: $other;
+      }
+    }
+  }
+
+  .square {
+    position: absolute;
+    left: 85%;
+    top: -24px;
+    background: $other;
+    width: 44px;
+    height: 44px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -0.9vw 0.9vw 1.5vw -0.75vw $other;
+    .inner-square {
+      border: solid 4px $main;
+      width: 50%;
+      height: 50%;
+    }
+    .heart {
+      width: 100%;
+      height: 100%;
+      margin-bottom: 50%;
+      svg {
+        fill: $main;
+        width: 50%;
+      }
+    }
+  }
+  .soon-top {
+    font-family: 'VCR', sans-serif;
+    left: 24px;
+    top: -24px;
+    position: absolute;
+    border: solid 4px $other;
+    background: $main;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    padding-left: 12px;
+    z-index: 1;
+    width: 80%;
+    box-shadow: -0.9vw 0.9vw 1.5vw -0.75vw $other;
+  }
+}
+
+.change-button {
+  position: absolute;
+  width: 350px;
+  height: 70px;
+  padding-top: 12px;
+  border: solid 4px $other;
+  bottom: 64px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  p {
+    font-family: 'AnoBlack', sans-serif;
+    font-size: 2.2rem;
+  }
+
+  @media screen and (max-width: 1085px) {
+    width: 80%;
+    height: 90px;
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  .change {
+    box-shadow: -0.9vw 0.9vw 1.5vw -0.75vw $other;
+    position: absolute;
+    top: -24px;
+    border: solid 4px $other;
+    padding: 6px;
+    font-size: 1.5rem;
+    background: $main;
+  }
+
+  &.left {
+    left: 64px;
+    .change {
+      left: -24px;
+    }
+    @media screen and (max-width: 1085px) {
+      left: 10%;
+      bottom: 200px;
+    }
+  }
+  &.right {
+    right: 64px;
+    .change {
+      right: -24px;
+    }
+    @media screen and (max-width: 1085px) {
+      right: 10%;
+    }
+  }
+}
+
+main.read {
+  position: relative;
+  z-index: 2;
 }
