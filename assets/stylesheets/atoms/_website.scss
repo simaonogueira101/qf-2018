@@ -267,10 +267,10 @@ i {
       border: solid 2px $other;
 
       &:hover {
-        background-image: url("../resources/transp-grid.svg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        background-color: $main;
+        background-image: linear-gradient(45deg, $other 25%, transparent 25%, transparent 75%, $other 75%, $other), linear-gradient(45deg, $other 25%, transparent 25%, transparent 75%, $other 75%, $other);
+        background-size: 30px 30px;
+        background-position:0 0, 15px 15px;
 
         a {
           background: $main;
@@ -306,6 +306,7 @@ i {
     height: 100%;
     background: $other;
     width: 0;
+    transition: width 2s;
   }
 }
 
@@ -464,6 +465,11 @@ main {
       img {
         width: 90%;
       }
+      // Temporary!
+      background-color: $main;
+      background-image: linear-gradient(45deg, $other 25%, transparent 25%, transparent 75%, $other 75%, $other), linear-gradient(45deg, $other 25%, transparent 25%, transparent 75%, $other 75%, $other);
+      background-size: 30px 30px;
+      background-position:0 0, 15px 15px;
     }
   }
 }
@@ -516,6 +522,76 @@ main {
     display: flex;
     align-items: center;
     padding: 6px;
+    z-index: 1;
+    width: 80%;
+    box-shadow: -0.9vw 0.9vw 1.5vw -0.75vw $other;
+  }
+}
+
+.soon-container {
+  padding-top: 280px;
+  padding-bottom: 96px;
+  padding-left: 24px;
+  padding-right: 24px;
+
+  .soon-container-c {
+    max-width: 650px;
+    margin: 0 auto;
+    padding-left: 24px;
+    padding-right: 24px;
+    border: solid 4px $other;
+    padding-top: 48px;
+    padding-bottom: 32px;
+    font-size: 2.2rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    svg {
+      margin-top: 24px;
+      margin-bottom: 32px;
+      width: 100px;
+      .cls-1 {
+        stroke: $other;
+      }
+      .cls-2 {
+        fill: $other;
+      }
+    }
+  }
+
+  .square {
+    position: absolute;
+    left: 85%;
+    top: -24px;
+    background: $other;
+    width: 44px;
+    height: 44px;
+    z-index: 3;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: -0.9vw 0.9vw 1.5vw -0.75vw $other;
+    .inner-square {
+      border: solid 4px $main;
+      width: 50%;
+      height: 50%;
+    }
+  }
+  .soon-top {
+    font-family: 'VCR', sans-serif;
+    left: 24px;
+    top: -24px;
+    position: absolute;
+    border: solid 4px $other;
+    background: $main;
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    padding: 6px;
+    padding-left: 12px;
     z-index: 1;
     width: 80%;
     box-shadow: -0.9vw 0.9vw 1.5vw -0.75vw $other;
