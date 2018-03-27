@@ -46,16 +46,22 @@ function newsObject() {
 
     if(thisNews + 1 == newsTotal) {
       document.querySelector(".right").style.display = "none";
+      document.querySelector(".left").href = "../read/?id=" + thisNews;
+      document.querySelector(".left p").innerHTML = textObject.feed.entry[thisNews - 1].gsx$título.$t;
     }
     if(thisNews + 1 == 1) {
       document.querySelector(".left").style.display = "none";
+      document.querySelector(".right").href = "../read/?id=" + (thisNews + 2);
+      document.querySelector(".right p").innerHTML = textObject.feed.entry[thisNews + 1].gsx$título.$t;
     }
 
-    document.querySelector(".right").href = "../read/?id=" + (thisNews + 2);
-    document.querySelector(".left").href = "../read/?id=" + thisNews;
-    document.querySelector(".right p").innerHTML = textObject.feed.entry[thisNews + 1].gsx$título.$t;
-    document.querySelector(".left p").innerHTML = textObject.feed.entry[thisNews - 1].gsx$título.$t;
-    
+    if(thisNews + 1 < newsTotal && thisNews + 1 > 1) {
+      document.querySelector(".right").href = "../read/?id=" + (thisNews + 2);
+      document.querySelector(".left").href = "../read/?id=" + thisNews;
+      document.querySelector(".right p").innerHTML = textObject.feed.entry[thisNews + 1].gsx$título.$t;
+      document.querySelector(".left p").innerHTML = textObject.feed.entry[thisNews - 1].gsx$título.$t;
+    }
+
   } else {
     document.querySelector(".right").style.display = "none";
     document.querySelector(".left").style.display = "none";
