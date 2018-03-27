@@ -223,6 +223,7 @@ i {
   top: calc((100vh / 6) - 25px);
   cursor: pointer;
   z-index: 6;
+  transition: padding-left 0.5s;
 
   div {
     background: $other;
@@ -247,12 +248,16 @@ i {
   }
 
   @media screen and (max-width: 805px) {
-    left: calc(50% - 10px);
+    margin: 0 auto;
+    left: 0;
+    right: 0;
     top: calc(100vh / 44);
+    width: 40px;
   }
 
   &.active {
     position: fixed;
+    padding-left: 6px;
   }
 }
 
@@ -262,7 +267,7 @@ i {
   height: 100vh;
   z-index: 5;
   right: -100vw;
-  transition: right 0.5s, bottom 0.5s;
+  transition: right 0.5s, top 0.5s;
 
   div {
     a {
@@ -336,10 +341,10 @@ i {
   }
   @media screen and (max-width: 805px) {
     right: 0;
-    bottom: -100vh;
+    top: -100vh;
 
     &.active {
-      bottom: -11.5%;
+      top: 11.5%;
     }
   }
   @media screen and (min-width: 805px) {
@@ -362,7 +367,7 @@ i {
     text-align: center;
 
     @media screen and (max-width: 370px) {
-      font-size: 5rem;
+      font-size: 6rem;
     }
   }
 }
@@ -405,6 +410,10 @@ main {
   display: flex;
   align-items: center;
   flex-direction: column;
+
+  &.outdated {
+    filter: opacity(50%);
+  }
 
   svg {
     fill: $other;
@@ -521,10 +530,10 @@ main {
 
       &.news {
         position: absolute;
-        background-image: url("../../assets/resources/test.jpg");
-        background-size: cover;
-        background-position: center;
-        background-repeat: no-repeat;
+        background-color: $main;
+        background-image: linear-gradient(45deg, $other 25%, transparent 25%, transparent 75%, $other 75%, $other), linear-gradient(45deg, $other 25%, transparent 25%, transparent 75%, $other 75%, $other);
+        background-size: 30px 30px;
+        background-position:0 0, 15px 15px;
         width: 150px;
         height: 150px;
 
@@ -911,4 +920,80 @@ main {
 main.read {
   position: relative;
   z-index: 2;
+}
+
+.calendar-container {
+  padding-left: 42px;
+  padding-right: 42px;
+  display: flex;
+  flex-direction: row;
+  height: 600px;
+  width: 100%;
+
+  .calendar-menu {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    height: 100%;
+    margin-right: 42px;
+    justify-content: space-around;
+
+    .menu svg {
+      height: 80px;
+      fill: $other;
+
+      &.hide {
+        display: none;
+      }
+    }
+
+    .menu-title {
+      width: 100%;
+      text-align: center;
+      font-size: 1.8rem;
+      margin-top: -24px;
+      margin-bottom: 12px;
+    }
+  }
+
+  .calendar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    width: calc(100% - 150px);
+    padding: 42px;
+    overflow-y: scroll;
+    border: solid 4px $other;
+    box-shadow: -0.9vw 0.9vw 1.5vw -0.75vw $other;
+
+    &.hide {
+      display: none;
+    }
+
+    .event {
+      width: 150px;
+      margin: 12px;
+
+      div {
+        width: 100%;
+        height: 150px;
+        margin-bottom: 12px;
+        background-color: $main;
+        background-image: linear-gradient(45deg, $other 25%, transparent 25%, transparent 75%, $other 75%, $other), linear-gradient(45deg, $other 25%, transparent 25%, transparent 75%, $other 75%, $other);
+        background-size: 30px 30px;
+        background-position:0 0, 15px 15px;
+      }
+
+      p {
+        text-align: center;
+      }
+    }
+  }
+
+  margin-top: 280px;
+
+  @media screen and (max-width: 805px) {
+    margin-top: 96px;
+  }
 }
