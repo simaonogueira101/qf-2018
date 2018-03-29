@@ -4,7 +4,7 @@ html {
 }
 
 body {
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   overflow-x: hidden;
 }
@@ -930,6 +930,10 @@ main.read {
   height: 600px;
   width: 100%;
 
+  @media screen and (max-width: 805px) {
+    display: inline-block;
+  }
+
   .calendar-menu {
     display: flex;
     flex-direction: column;
@@ -951,8 +955,33 @@ main.read {
       width: 100%;
       text-align: center;
       font-size: 1.8rem;
-      margin-top: -24px;
+      margin-top: 12px;
       margin-bottom: 12px;
+    }
+
+    @media screen and (max-width: 805px) {
+      width: 100%;
+      height: 100px;
+      margin-right: 0px;
+      flex-direction: row;
+      justify-content: space-around;
+      margin-bottom: 42px;
+
+      div {
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+      }
+
+      .menu svg {
+        min-height: 30px;
+        height: 40px;
+        width: 80px;
+      }
+
+      .menu-title {
+        font-size: 1.3rem;
+      }
     }
   }
 
@@ -966,6 +995,12 @@ main.read {
     overflow-y: scroll;
     border: solid 4px $other;
     box-shadow: -0.9vw 0.9vw 1.5vw -0.75vw $other;
+
+    @media screen and (max-width: 805px) {
+      width: 100%;
+      height: 500px;
+      margin-bottom: 96px;
+    }
 
     &.hide {
       display: none;
