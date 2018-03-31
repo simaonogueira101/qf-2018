@@ -927,8 +927,8 @@ main.read {
   padding-right: 42px;
   display: flex;
   flex-direction: row;
-  height: 600px;
   width: 100%;
+  margin-bottom: 50px;
 
   @media screen and (max-width: 805px) {
     display: inline-block;
@@ -990,9 +990,8 @@ main.read {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    width: calc(100% - 150px);
+    width: calc(100% - 350px);
     padding: 42px;
-    overflow-y: scroll;
     border: solid 4px $other;
     box-shadow: -0.9vw 0.9vw 1.5vw -0.75vw $other;
 
