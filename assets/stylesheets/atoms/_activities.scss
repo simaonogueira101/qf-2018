@@ -1,0 +1,29 @@
+.calendar-container {
+    .calendar {
+        .event {
+            .image {
+                border: solid 4px $other;
+            }
+            .image-1 {
+                background-image: url('../../assets/resources/trivial.jpg');
+                background-size: cover;
+            }
+
+            .image-2 {
+                background-image: url('../../assets/resources/bandas.jpg');
+                background-size: cover;
+            }
+
+            .image-sport-1 {
+                background-image: url('../../assets/resources/intelectual.jpg');
+                background-size: cover;
+            }
+
+            .image-sport-2 {
+                background-image: url('../../assets/resources/torneios_aac_1.jpg');
+                background-size: cover;
+            }
+
+        }
+    }
+}
