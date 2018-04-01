@@ -45,7 +45,7 @@ function newsObject() {
     var date = document.createElement("p");
     date.classList.add("date", "news");
     date.innerHTML = textObject.feed.entry[i].gsx$data.$t;
-    var desc = document.createElement("p");
+    var desc = document.createElement("pre");
     desc.classList.add("description", "news");
     desc.innerHTML = textObject.feed.entry[i].gsx$descrição.$t;
 
