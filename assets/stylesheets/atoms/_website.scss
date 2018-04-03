@@ -60,6 +60,11 @@ i {
   font-style: italic;
 }
 
+pre {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
 .logo {
   position: absolute;
   left: 56px;
