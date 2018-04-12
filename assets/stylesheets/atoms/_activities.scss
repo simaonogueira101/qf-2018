@@ -4,6 +4,9 @@
             .image {
                 border: solid 4px $other;
             }
+
+            /*----------- IMAGENS CULTURAIS  --------------*/
+
             .image-1 {
                 background-image: url('../../assets/resources/trivial.jpg');
                 background-size: cover;
@@ -18,6 +21,13 @@
                 background-image: url('../../assets/resources/dr.why.jpg');
                 background-size: cover;
             }
+
+            .image-4 {
+                background-image: url('../../assets/resources/concurso_dj.jpg');
+                background-size: cover;
+            }
+
+            /*----------- IMAGENS DESPORTIVAS  --------------*/
 
             .image-sport-1 {
                 background-image: url('../../assets/resources/intelectual.jpg');
@@ -41,6 +51,18 @@
 
             .image-sport-5 {
                 background-image: url('../../assets/resources/surf_trip.jpg');
+                background-size: cover;
+            }
+
+            .image-sport-6 {
+                background-image: url('../../assets/resources/coimbra_pump.jpg');
+                background-size: cover;
+            }
+
+            /*----------- IMAGENS TRADCIONAIS  --------------*/
+
+            .image-trad-1 {
+                background-image: url('../../assets/resources/recita.jpg');
                 background-size: cover;
             }
 
