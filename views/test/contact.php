@@ -1,5 +1,5 @@
 <?php
-  $to      = 'simao.nogueira66@gmail.com';
+  $to      = 'comunicacao@queimadasfitascoimbra.pt';
   $subject = 'Participação Concurso Queima das Fitas 2018';
   $message = 'Resposta: ' . $_POST["artist"] . ", Email: " . $_POST["email"];
   $headers = 'From: comunicacao@queimadasfitascoimbra.pt' . "\r\n" .
