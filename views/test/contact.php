@@ -1,5 +1,5 @@
 <?php
-  $to      = 'comunicacao@queimadasfitascoimbra.pt';
+  $to      = 'simao.nogueira66@gmail.com';
   $subject = 'Participação Concurso Queima das Fitas 2018';
   $message = 'Resposta: ' . $_POST["artist"] . ", Email: " . $_POST["email"];
   $headers = 'From: comunicacao@queimadasfitascoimbra.pt' . "\r\n" .
@@ -8,6 +8,6 @@
 
   mail($to, $subject, $message, $headers);
 
-  header('Location: /');
+  header('Location: index.html');
   exit();
 ?>
