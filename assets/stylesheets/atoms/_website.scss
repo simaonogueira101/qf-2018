@@ -1129,4 +1129,67 @@ main.read {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
+
+  @media screen and (max-width: 805px) {
+    overflow: auto;
+  }
+}
+
+.artists-container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.artists {
+  width: 100%;
+  height: 60vh;
+  margin-top: 12vw;
+  max-width: 1200px;
+
+  @media screen and (max-width: 805px) {
+    margin-top: -150px;
+    padding-left: 12px;
+    padding-right: 12px;
+
+    .mobile-br {
+      display: none;
+    }
+  }
+
+  .artist {
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'AnoBlack', sans-serif;
+
+    &.main {
+      font-size: 3vw;
+      line-height: 150%;
+    }
+    &.secondary {
+      font-size: 1.8vw;
+      line-height: 180%;
+    }
+    &.other {
+      font-size: 1vw;
+      line-height: 230%;
+    }
+
+    @media screen and (max-width: 805px) {
+      &.main {
+        font-size: 6vw;
+        line-height: 150%;
+      }
+      &.secondary {
+        font-size: 3.5vw;
+        line-height: 180%;
+      }
+      &.other {
+        font-size: 2.5vw;
+        line-height: 230%;
+      }
+    }
+  }
 }
