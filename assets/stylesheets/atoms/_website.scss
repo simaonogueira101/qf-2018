@@ -1141,40 +1141,91 @@ main.read {
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
 }
 
 .artists {
   width: 100%;
   height: 60vh;
-  margin-top: 12vw;
-  max-width: 1200px;
+  margin-top: 16vw;
+  padding-left: 96px;
+  padding-right: 96px;
 
   @media screen and (max-width: 805px) {
     margin-top: -150px;
     padding-left: 12px;
     padding-right: 12px;
-
-    .mobile-br {
-      display: none;
-    }
   }
 
   .artist {
     text-align: center;
     text-transform: uppercase;
     font-family: 'AnoBlack', sans-serif;
+    cursor: default;
+
+    span {
+      position: relative;
+      transition: color 0.3s;
+      z-index: 0;
+
+      &:before {
+        content: "";
+        position: absolute;
+        height: 85%;
+        bottom: 15%;
+        left: -2.5%;
+        background-color: $other;
+        visibility: hidden;
+        width: 0;
+        transition: all 0.3s ease-in-out 0s;
+        z-index: -1;
+      }
+
+      &:hover:before {
+        visibility: visible;
+        width: 105%;
+      }
+
+      &:hover {
+        color: $main;
+        z-index: 4;
+      }
+    }
 
     &.main {
       font-size: 3vw;
       line-height: 150%;
+
+      span {
+        margin-right: 18px;
+        margin-left: 18px;
+      }
+
+      @media screen and (max-width: 805px) {
+        span {
+          margin-right: 0;
+          margin-left: 0;
+          display: inline;
+        }
+      }
     }
     &.secondary {
       font-size: 1.8vw;
       line-height: 180%;
+
+      span {
+        margin-right: 12px;
+        margin-left: 12px;
+      }
     }
     &.other {
       font-size: 1vw;
       line-height: 230%;
+
+      span {
+        margin-right: 12px;
+        margin-left: 12px;
+      }
     }
 
     @media screen and (max-width: 805px) {
@@ -1191,5 +1242,11 @@ main.read {
         line-height: 230%;
       }
     }
+  }
+}
+
+@media screen and (min-width: 805px) {
+  .desktop-hide {
+    display: none;
   }
 }
