@@ -1167,6 +1167,7 @@ main.read {
       position: relative;
       transition: color 0.3s;
       z-index: 0;
+      user-select: none;
 
       &:before {
         content: "";
