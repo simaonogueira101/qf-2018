@@ -1162,12 +1162,13 @@ main.read {
     text-transform: uppercase;
     font-family: 'AnoBlack', sans-serif;
     cursor: default;
+    user-select: none;
+    -webkit-touch-callout: none;
 
     span {
       position: relative;
       transition: color 0.3s;
       z-index: 0;
-      user-select: none;
 
       &:before {
         content: "";
