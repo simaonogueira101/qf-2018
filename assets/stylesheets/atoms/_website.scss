@@ -1251,3 +1251,29 @@ main.read {
     display: none;
   }
 }
+
+
+
+.pop-media::before {
+  background-color: $main;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: darken;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.pop-media::after {
+  background-color: $other;
+  content: '';
+  display: block;
+  width: 100%;
+  height: 100%;
+  mix-blend-mode: lighten;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
