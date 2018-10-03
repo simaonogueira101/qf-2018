@@ -17,13 +17,13 @@
 	align-items: center;
 	width: 600px;
 	height: 500px;
-	pointer-events: none;
 	opacity: 0;
 	background-repeat: no-repeat;
 	background-position: 50% 50%;
 	background-size: cover;
 	transition: opacity 0.2s;
 }
+
 
 .pop-media--circle {
 	width: 250px;
